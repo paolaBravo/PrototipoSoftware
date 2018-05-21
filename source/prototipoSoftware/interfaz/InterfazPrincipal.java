@@ -34,7 +34,7 @@ public class InterfazPrincipal extends JFrame
 	public InterfazPrincipal()
 	{
 		
-		proyecto = new Proyecto("C:\\Users\\Paola\\Documents");
+		proyecto = new Proyecto("‪C:\\PropuestasGrado");
 		
         setLayout( new BorderLayout( ) );
         setTitle( "Consulta" );
