@@ -24,6 +24,12 @@ public class Proyecto
 		directorio = Pruta;
 	}
 	
+	/**
+	 * Registra una propuesta
+	 * @param propuesta
+	 * @param estu
+	 * @throws Exception
+	 */
 	public void registrarPropuesta(PropuestaDeGrado propuesta, Estudiante estu) throws Exception
 	{
 		
