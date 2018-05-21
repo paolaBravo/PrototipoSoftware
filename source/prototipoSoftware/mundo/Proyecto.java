@@ -6,6 +6,9 @@ import java.util.ArrayList;
 public class Proyecto 
 {
 
+	/**
+	 * arreglo de propuestas de grado
+	 */
 	private ArrayList propuestasGrado;
 	private ArrayList trabajosGrado;
 	private ArrayList jurados;
