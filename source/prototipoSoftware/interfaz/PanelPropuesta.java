@@ -139,11 +139,20 @@ public class PanelPropuesta extends JPanel implements ActionListener
 
  
 	
-	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
+		if(AGREGAR.equals( e.getActionCommand( ) ))
+		{
+			principal.registrarPropuesta();
+		}
+		
+		else if(CONSULTAR.equals( e.getActionCommand( ) ))
+		{
+			principal.consultarPropuesta();
+		}
 		
 	}
+
 
 	
 }
