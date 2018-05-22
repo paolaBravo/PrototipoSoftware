@@ -31,6 +31,8 @@ public class InterfazPrincipal extends JFrame
 	
 	private PanelInterfaz panelPrincipal;
 	
+	private MenuInterfaz barraMenu;
+	
 	public InterfazPrincipal()
 	{
 		
@@ -41,6 +43,10 @@ public class InterfazPrincipal extends JFrame
         setSize( 400, 400 );
         setLocationRelativeTo( null );
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        
+        barraMenu = new MenuInterfaz(this);
+        setJMenuBar(barraMenu);
+    
         
         panelPrincipal = new PanelInterfaz(this);
         add(panelPrincipal, BorderLayout.SOUTH);

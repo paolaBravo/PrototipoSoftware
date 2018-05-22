@@ -49,14 +49,14 @@ public class MenuInterfaz extends JMenuBar implements ActionListener
         menuArchivo.setMnemonic( KeyEvent.VK_A );
         add( menuArchivo );
         
-        itemPropuestaGrado = new JMenuItem("Consultar por Trabajo de grado");
+        itemPropuestaGrado = new JMenuItem("Consultar por propuesta de grado");
         itemPropuestaGrado.setActionCommand(PROPUESTAGRADO);
         itemPropuestaGrado.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_N, ActionEvent.CTRL_MASK ) );
         itemPropuestaGrado.setMnemonic( KeyEvent.VK_N );
         itemPropuestaGrado.addActionListener( (ActionListener) this );
         menuArchivo.add(itemPropuestaGrado);
         
-        itemTrabajoGrado = new JMenuItem("Consultar por canción");
+        itemTrabajoGrado = new JMenuItem("Consultar por trabajo de grado");
         itemTrabajoGrado.setActionCommand(TRABAJOGRADO);
         itemTrabajoGrado.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_A, ActionEvent.CTRL_MASK ) );
         itemTrabajoGrado.setMnemonic( KeyEvent.VK_A );
@@ -83,7 +83,8 @@ public class MenuInterfaz extends JMenuBar implements ActionListener
 		
 		if(PROPUESTAGRADO.equals(comando))
 		{
-
+			JDialogPropuesta propuesta = new JDialogPropuesta();
+			propuesta.setVisible(true);
 		
 		
 		}
