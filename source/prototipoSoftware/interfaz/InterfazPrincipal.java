@@ -77,10 +77,11 @@ public class InterfazPrincipal extends JFrame
 				System.out.println(proyecto.darNombre());
 				JOptionPane.showMessageDialog(null, "Se agregado correctamente");
 				
-			} catch (Exception e) 
-				{
-				 JOptionPane.showMessageDialog( this, e.getMessage( ), "Error", JOptionPane.ERROR_MESSAGE );
-				}
+			} 
+			catch (Exception e) 
+			{
+				JOptionPane.showMessageDialog( this, e.getMessage( ), "Error", JOptionPane.ERROR_MESSAGE );
+			}
 		}
 	
 	}
