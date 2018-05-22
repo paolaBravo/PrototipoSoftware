@@ -57,17 +57,7 @@ public class PanelInterfaz extends JPanel implements ActionListener
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if(AGREGAR.equals( e.getActionCommand( ) ))
-		{
-			principal.registrarPropuesta();
-		}
-		
-		else if(CONSULTAR.equals( e.getActionCommand( ) ))
-		{
-			principal.consultarPropuesta();
-		}
-		
+
 	}
 
 }
