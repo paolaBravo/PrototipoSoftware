@@ -5,14 +5,6 @@ import java.io.File;
 public class PropuestaDeGrado 
 {
 
-	public final static String MODALIDAD1 = "Monografia";
-	
-	public final static String MODALIDAD2 = "Asistencia de investigacion";
-	
-	public final static String MODALIDAD3 = "Trabajo de investigacion";
-	
-	public final static String MODALIDAD4 = "Opcion de empredimiento";
-	
 	private String modalidad;
 	
 	private File propuesta;
@@ -66,34 +58,6 @@ public class PropuestaDeGrado
 	 */
 	public void setEstudiante(Estudiante estudiante) {
 		this.estudiante = estudiante;
-	}
-
-	/**
-	 * @return the modalidad1
-	 */
-	public static String getModalidad1() {
-		return "Monografia";
-	}
-
-	/**
-	 * @return the modalidad2
-	 */
-	public static String getModalidad2() {
-		return "Asistencia de investigacion";
-	}
-
-	/**
-	 * @return the modalidad3
-	 */
-	public static String getModalidad3() {
-		return "Trabajo de investigacion";
-	}
-
-	/**
-	 * @return the modalidad4
-	 */
-	public static String getModalidad4() {
-		return "Opcion de empredimiento";
 	}
 
 
