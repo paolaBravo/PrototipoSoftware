@@ -51,9 +51,71 @@ public class InterfazPrincipal extends JFrame
         panelPrincipal = new PanelInterfaz(this);
         add(panelPrincipal, BorderLayout.SOUTH);
         
-        seleccionarArchivo = new JFileChooser();
+        
 	}
-		
+	
+	
+	
+	public Proyecto getProyecto() {
+		return proyecto;
+	}
+
+
+
+	public JFileChooser getSeleccionarArchivo() {
+		return seleccionarArchivo;
+	}
+
+
+
+	public String getUltimoDirectorio() {
+		return ultimoDirectorio;
+	}
+
+
+
+	public PanelInterfaz getPanelPrincipal() {
+		return panelPrincipal;
+	}
+
+
+
+	public MenuInterfaz getBarraMenu() {
+		return barraMenu;
+	}
+
+
+
+	public void setProyecto(Proyecto proyecto) {
+		this.proyecto = proyecto;
+	}
+
+
+
+	public void setSeleccionarArchivo(JFileChooser seleccionarArchivo) {
+		this.seleccionarArchivo = seleccionarArchivo;
+	}
+
+
+
+	public void setUltimoDirectorio(String ultimoDirectorio) {
+		this.ultimoDirectorio = ultimoDirectorio;
+	}
+
+
+
+	public void setPanelPrincipal(PanelInterfaz panelPrincipal) {
+		this.panelPrincipal = panelPrincipal;
+	}
+
+
+
+	public void setBarraMenu(MenuInterfaz barraMenu) {
+		this.barraMenu = barraMenu;
+	}
+
+
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         InterfazPrincipal interfaz = new InterfazPrincipal( );

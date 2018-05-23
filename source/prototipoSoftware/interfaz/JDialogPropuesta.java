@@ -26,6 +26,7 @@ public class JDialogPropuesta extends JDialog
 	
 	public JDialogPropuesta()
 	{
+		proyecto = new Proyecto("C:\\Users\\Paola\\Documents");
 		
 		setTitle( "Propuesta de grado" );
         setSize( 590, 400 );
@@ -41,19 +42,21 @@ public class JDialogPropuesta extends JDialog
         add(panelInfo, BorderLayout.CENTER);
 	}
 
+	
+	
 	public void registrarPropuesta()
 	{
 		 JFileChooser fc = new JFileChooser( ultimoDirectorio );
 		 fc.setFileSelectionMode( JFileChooser.FILES_ONLY );
 		 fc.setMultiSelectionEnabled( false );
 		 
-         int resultado = fc.showOpenDialog( this );
-
-         if( resultado == JFileChooser.APPROVE_OPTION )
-         {
-             File seleccionado = fc.getSelectedFile( );
-             ultimoDirectorio = seleccionado.getName();
-    
+	     int resultado = fc.showOpenDialog( this );
+	
+	     if( resultado == JFileChooser.APPROVE_OPTION )
+	     {
+	         File seleccionado = fc.getSelectedFile( );
+	         ultimoDirectorio = seleccionado.getName();
+	
 			try 
 			{
 				String pNombre = JOptionPane.showInputDialog("Ingrese el nombre del estudiante", "");
@@ -61,7 +64,7 @@ public class JDialogPropuesta extends JDialog
 				String pSemestre = JOptionPane.showInputDialog("Ingrese el semestre del estudiante (numero entero)", "");
 				int castSemestre = Integer.parseInt(pSemestre);	
 				String pPrograma = JOptionPane.showInputDialog("Ingrese el programa del estudiante", "");
-
+	
 				Estudiante estu = new Estudiante(pNombre, pCodigo, castSemestre, pPrograma);
 				
 				proyecto.registrarPropuesta(new PropuestaDeGrado(ultimoDirectorio, estu), estu);
@@ -88,7 +91,7 @@ public class JDialogPropuesta extends JDialog
 			
 			PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(i);
 			String aux2 = aux.getEstudiante().getCodigo();
-
+	
 			if(y.equalsIgnoreCase(aux2))
 			{
 				
@@ -108,28 +111,27 @@ public class JDialogPropuesta extends JDialog
 				{
 					JOptionPane.showMessageDialog(null, "Gracias :v");
 				}
-
-
+	
+	
 			}
 		}
 		
 	}
 	
 	public void abrirarchivo(String archivo){
-
+	
 	     try {
-
+	
 	            File objetofile = new File (archivo);
 	            Desktop.getDesktop().open(objetofile);
-
+	
 	     }catch (IOException ex) {
-
+	
 	            System.out.println(ex);
-
+	
 	     }
-
+	
 	}                         
 
-	
 	
 }

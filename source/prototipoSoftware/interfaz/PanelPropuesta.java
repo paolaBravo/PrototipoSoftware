@@ -49,10 +49,12 @@ public class PanelPropuesta extends JPanel implements ActionListener
 	
 	private JScrollPane scroll;
 	
+	private InterfazPrincipal referencia;
+	
 	public PanelPropuesta( JDialogPropuesta ia )
 	{
 		principal = ia;
-		
+	
 		TitledBorder borde = BorderFactory.createTitledBorder("Información de la propuesta de grado");
 		borde.setTitleColor( Color.BLACK );
 		setBorder( borde );
