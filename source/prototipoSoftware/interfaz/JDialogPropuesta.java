@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 import prototipoSoftware.mundo.Estudiante;
 import prototipoSoftware.mundo.PropuestaDeGrado;
@@ -26,7 +27,7 @@ public class JDialogPropuesta extends JDialog
 	
 	public JDialogPropuesta()
 	{
-		proyecto = new Proyecto("C:\\Users\\Paola\\Documents");
+		proyecto = new Proyecto("D:\\Unibague");
 		
 		setTitle( "Propuesta de grado" );
         setSize( 590, 400 );
@@ -59,12 +60,23 @@ public class JDialogPropuesta extends JDialog
 	
 			try 
 			{
-				String pNombre = JOptionPane.showInputDialog("Ingrese el nombre del estudiante", "");
-				String pCodigo = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
-				String pSemestre = JOptionPane.showInputDialog("Ingrese el semestre del estudiante (numero entero)", "");
-				int castSemestre = Integer.parseInt(pSemestre);	
-				String pPrograma = JOptionPane.showInputDialog("Ingrese el programa del estudiante", "");
-	
+//				String pNombre = JOptionPane.showInputDialog("Ingrese el nombre del estudiante", "");
+//				String pCodigo = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
+//				String pSemestre = JOptionPane.showInputDialog("Ingrese el semestre del estudiante (numero entero)", "");
+//				int castSemestre = Integer.parseInt(pSemestre);	
+//				String pPrograma = JOptionPane.showInputDialog("Ingrese el programa del estudiante", "");
+//	
+				String pNombre = panelInfo.getTxtNombre();
+				
+				String pCodigo = panelInfo.getTxtNombre();
+				
+				String pSemestre = panelInfo.getTxtNombre();
+				int castSemestre = Integer.parseInt(pSemestre);
+				
+				String pPrograma = panelInfo.getTxtNombre();
+				
+				
+				
 				Estudiante estu = new Estudiante(pNombre, pCodigo, castSemestre, pPrograma);
 				
 				proyecto.registrarPropuesta(new PropuestaDeGrado(ultimoDirectorio, estu), estu);

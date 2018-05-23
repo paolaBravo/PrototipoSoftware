@@ -156,5 +156,95 @@ public class PanelPropuesta extends JPanel implements ActionListener
 	}
 
 
+
+	/**
+	 * @return the txtNombre
+	 */
+	public String getTxtNombre() {
+		return txtNombre.getText();
+	}
+
+
+
+	/**
+	 * @return the txtCodigo
+	 */
+	public String getTxtCodigo() {
+		return txtCodigo.getText();
+	}
+
+
+
+	/**
+	 * @return the txtSemestre
+	 */
+	public String getTxtSemestre() {
+		return txtSemestre.getText();
+	}
+
+
+
+	/**
+	 * @return the txtPrograma
+	 */
+	public String getTxtPrograma() {
+		return txtPrograma.getText();
+	}
+
+
+
+	/**
+	 * @return the txtResultado
+	 */
+	public JTextArea getTxtResultado() {
+		return txtResultado;
+	}
+
+
+
+	/**
+	 * @param txtNombre the txtNombre to set
+	 */
+	public void setTxtNombre(JTextField txtNombre) {
+		this.txtNombre = txtNombre;
+	}
+
+
+
+	/**
+	 * @param txtCodigo the txtCodigo to set
+	 */
+	public void setTxtCodigo(JTextField txtCodigo) {
+		this.txtCodigo = txtCodigo;
+	}
+
+
+
+	/**
+	 * @param txtSemestre the txtSemestre to set
+	 */
+	public void setTxtSemestre(JTextField txtSemestre) {
+		this.txtSemestre = txtSemestre;
+	}
+
+
+
+	/**
+	 * @param txtPrograma the txtPrograma to set
+	 */
+	public void setTxtPrograma(JTextField txtPrograma) {
+		this.txtPrograma = txtPrograma;
+	}
+
+
+
+	/**
+	 * @param txtResultado the txtResultado to set
+	 */
+	public void setTxtResultado(JTextArea txtResultado) {
+		this.txtResultado = txtResultado;
+	}
+
+
 	
 }
