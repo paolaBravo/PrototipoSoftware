@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
@@ -30,7 +31,7 @@ public class JDialogPropuesta extends JDialog
 		proyecto = new Proyecto("D:\\Unibague");
 		
 		setTitle( "Propuesta de grado" );
-        setSize( 590, 400 );
+        setSize( 600, 400 );
         setResizable( false );
         setLocationRelativeTo(null);
         setModal(true);
@@ -60,29 +61,27 @@ public class JDialogPropuesta extends JDialog
 	
 			try 
 			{
-//				String pNombre = JOptionPane.showInputDialog("Ingrese el nombre del estudiante", "");
-//				String pCodigo = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
-//				String pSemestre = JOptionPane.showInputDialog("Ingrese el semestre del estudiante (numero entero)", "");
-//				int castSemestre = Integer.parseInt(pSemestre);	
-//				String pPrograma = JOptionPane.showInputDialog("Ingrese el programa del estudiante", "");
-//	
+				
 				String pNombre = panelInfo.getTxtNombre();
 				
-				String pCodigo = panelInfo.getTxtCodigo();
-				
+				String pCodigo = panelInfo.getTxtCodigo();				
 				int pSemestre = Integer.parseInt(panelInfo.getTxtSemestre());
 				
 				String pPrograma = panelInfo.getTxtPrograma();
 				
-				
-				
-				Estudiante estu = new Estudiante(pNombre, pCodigo, pSemestre, pPrograma);
-				
-				proyecto.registrarPropuesta(new PropuestaDeGrado(ultimoDirectorio, estu), estu);
+				if( pNombre.equals("") || pCodigo.equals("")  || pSemestre == 0  || pPrograma.equals("") )
+				{
+					throw new Exception("No pueden haber campos vacios");
+				}
+				else 
+				{
+					Estudiante estu = new Estudiante(pNombre, pCodigo, pSemestre, pPrograma);
 					
-				System.out.println(proyecto.darNombre());
-				JOptionPane.showMessageDialog(null, "Se agregado correctamente");
-				
+					proyecto.registrarPropuesta(new PropuestaDeGrado(ultimoDirectorio, estu), estu);
+					
+					System.out.println(proyecto.darNombre());
+					JOptionPane.showMessageDialog(null, "Se agregado correctamente");
+				}
 			} 
 			catch (Exception e) 
 			{
@@ -91,6 +90,25 @@ public class JDialogPropuesta extends JDialog
 		}
 	
 	}
+	
+	
+//	public void modalidad()
+//	{
+//		ArrayList arregloPropuesta = proyecto.getArregloPropuesta();
+//		
+//		for (int i = 0; i < arregloPropuesta.size(); i++)
+//		{
+//			PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(i);
+//			String aux2 = aux.getPropuesta().getName(); 
+//			if(ultimoDirectorio != null)
+//			{
+//				
+//			}
+//		}
+//	}
+//	
+//	
+	
 	
 	public void consultarPropuesta()
 	{	

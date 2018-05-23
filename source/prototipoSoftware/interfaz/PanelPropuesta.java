@@ -8,12 +8,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
 public class PanelPropuesta extends JPanel implements ActionListener
@@ -48,6 +51,16 @@ public class PanelPropuesta extends JPanel implements ActionListener
 	private JButton butConsultar;
 	
 	private JScrollPane scroll;
+	
+	private JRadioButton jrbModalidad1;
+	
+	private JRadioButton jrbModalidad2;
+	
+	private JRadioButton jrbModalidad3;
+	
+	private JRadioButton jrbModalidad4;
+	
+	private ButtonGroup grupoModalidad;
 	
 	private InterfazPrincipal referencia;
 	
@@ -97,21 +110,51 @@ public class PanelPropuesta extends JPanel implements ActionListener
 	
 		add(panelInfo, BorderLayout.NORTH);
 		
+		//Panel Modalidad
+		
+		JPanel panelModalidad = new JPanel();
+		TitledBorder borde3 = BorderFactory.createTitledBorder("Modalidad");
+		borde3.setTitleColor( Color.BLACK );
+		panelModalidad.setLayout(new BorderLayout());
+		panelModalidad.setBorder( borde3 );
+
+		panelModalidad.setLayout(new GridLayout(4, 1));
+		panelModalidad.setPreferredSize( new Dimension(200,90 ) );
+		
+		jrbModalidad1 = new JRadioButton("Monografia");
+		jrbModalidad2 = new JRadioButton("Asistencia de investigacion");
+		jrbModalidad3 = new JRadioButton("Trabajo de investigacion");
+		jrbModalidad4 = new JRadioButton("Opcion de empredimiento");
+
+		grupoModalidad = new ButtonGroup();
+		grupoModalidad.add(jrbModalidad1);
+		grupoModalidad.add(jrbModalidad2);
+		grupoModalidad.add(jrbModalidad3);
+		grupoModalidad.add(jrbModalidad4);
+		
+		panelModalidad.add(jrbModalidad1);
+		panelModalidad.add(jrbModalidad2);
+		panelModalidad.add(jrbModalidad3);
+		panelModalidad.add(jrbModalidad4);
+		
+		
+		add(panelModalidad, BorderLayout.WEST);
+		
 		//Panel de resultados
 		JPanel panelResultados = new JPanel();
 		TitledBorder borde1 = BorderFactory.createTitledBorder("Visualizacion previa");
 		borde1.setTitleColor( Color.BLACK );
 		panelResultados.setLayout(new BorderLayout());
 		panelResultados.setBorder( borde1 );
-
+		panelResultados.setPreferredSize( new Dimension(380,90 ) );
+		
 		txtResultado = new JTextArea();
 		txtResultado.setBackground(Color.WHITE);
 		txtResultado.setEditable(false);
 		scroll = new JScrollPane(txtResultado);
 		
 		panelResultados.add(scroll,BorderLayout.CENTER);
-		
-		add(panelResultados);
+		add(panelResultados, BorderLayout.EAST);
 		
 		//Panel de Navegación
 		JPanel panelNavegacion= new JPanel();
@@ -139,7 +182,13 @@ public class PanelPropuesta extends JPanel implements ActionListener
 		add(panelNavegacion, BorderLayout.SOUTH);
 	}
 
- 
+	public void accionesButtonGroup()
+	{
+		if(jrbModalidad1.isSelected() == true)
+		{
+			
+		}
+	}
 	
 	public void actionPerformed(ActionEvent e) {
 		
