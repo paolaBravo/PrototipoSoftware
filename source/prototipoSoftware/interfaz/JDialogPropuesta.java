@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import prototipoSoftware.mundo.Estudiante;
@@ -81,12 +79,7 @@ public class JDialogPropuesta extends JDialog
 					
 					proyecto.registrarPropuesta(new PropuestaDeGrado(ultimoDirectorio, estu), estu);
 					
-					accionesButtonGroup();
-					
-					visualizar();
-					
 					System.out.println(proyecto.darNombre());
-					
 					JOptionPane.showMessageDialog(null, "Se agregado correctamente");
 				}
 			} 
@@ -99,7 +92,23 @@ public class JDialogPropuesta extends JDialog
 	}
 	
 	
-
+//	public void modalidad()
+//	{
+//		ArrayList arregloPropuesta = proyecto.getArregloPropuesta();
+//		
+//		for (int i = 0; i < arregloPropuesta.size(); i++)
+//		{
+//			PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(i);
+//			String aux2 = aux.getPropuesta().getName(); 
+//			if(ultimoDirectorio != null)
+//			{
+//				
+//			}
+//		}
+//	}
+//	
+//	
+	
 	
 	public void consultarPropuesta()
 	{	
@@ -137,92 +146,6 @@ public class JDialogPropuesta extends JDialog
 		}
 		
 	}
-	
-	public void visualizar() 
-	{
-			
-		
-		for (int i = 0; i < proyecto.getArregloPropuesta().size(); i++)
-		{
-			PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(i);
-			
-			String cast = aux.getPropuesta().getName();
-			String cast1 = aux.getEstudiante().getCodigo();
-			
-			
-			String x = cast + "  " + "Codigo:" + cast1 + "\n" ;
-			
-			if(cast != null && cast !="" && cast1 != null && cast1 != "")
-			{
-				JTextArea resultado = panelInfo.getTxtResultado();
-				resultado.insert(x, 0);
-			}
-			
-			
-		}
-	}
-	
-	
-	public void accionesButtonGroup()
-	{
-		
-		JRadioButton radioButto1 = panelInfo.getJrbModalidad1();
-		JRadioButton radioButto2 = panelInfo.getJrbModalidad2();
-		JRadioButton radioButto3 = panelInfo.getJrbModalidad3();
-		JRadioButton radioButto4 = panelInfo.getJrbModalidad4();
-		
-		boolean encontro = false;
-		
-		if(radioButto1.isSelected() == true)
-		{
-			
-			for (int i = 0; i < proyecto.getArregloPropuesta().size() && !encontro;)
-			{
-				PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(proyecto.getArregloPropuesta().size()-1);
-				
-				String monografia = "Monografia";
-				
-				proyecto.getArregloPropuesta().add(monografia);
-				encontro = true;
-			}
-		}
-		
-		else if(radioButto2.isSelected() == true)
-		{
-			for (int i = 0; i < proyecto.getArregloPropuesta().size() && !encontro;)
-			{
-				PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(proyecto.getArregloPropuesta().size()-1);
-				
-				proyecto.getArregloPropuesta().add("Asistencia de investigacion");
-				encontro = true;
-			}
-		}
-		
-		else if(radioButto3.isSelected() == true)
-		{
-			for (int i = 0; i < proyecto.getArregloPropuesta().size() && !encontro;)
-			{
-				PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(proyecto.getArregloPropuesta().size()-1);
-				
-				proyecto.getArregloPropuesta().add("Trabajo de investigacion");
-				encontro = true;
-			}
-		}
-		
-		else if(radioButto4.isSelected() == true)
-		{
-			for (int i = 0; i < proyecto.getArregloPropuesta().size() && !encontro;)
-			{
-				PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(proyecto.getArregloPropuesta().size()-1);
-				
-				proyecto.getArregloPropuesta().add("Opcion de empredimiento");
-				encontro = true;
-				
-			}
-		}
-	}
-	
-
 	
 	public void abrirarchivo(String archivo){
 	
