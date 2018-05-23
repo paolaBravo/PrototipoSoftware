@@ -52,42 +52,6 @@ public class Proyecto
 	
 	}
 	
-	
-	public ArrayList darNombre()
-	{
-		
-		ArrayList<String> temp = new ArrayList<>();
-		
-		for (int i = 0; i < propuestasGrado.size(); i++) 
-		{
-			PropuestaDeGrado aux = (PropuestaDeGrado) propuestasGrado.get(i);
-			
-			String cast = aux.getPropuesta().getName();
-			String cast1 = aux.getEstudiante().getCodigo();
-		 	String modalidad1 =aux.getModalidad1();
-		 	String modalidad2 =aux.getModalidad2();
-		 	String modalidad3 =aux.getModalidad3();
-		 	String modalidad4 =aux.getModalidad4();
-		 	
-			
-			String x = cast + cast1;
-			
-			if(cast != null && cast !="" && cast1 != null && cast1 != "")
-			{
-			
-				temp.add(x);
-			}
-			
-			if(modalidad1.equals(aux.MODALIDAD1))
-			{
-				String y = x + modalidad1;
-			}
-			
-		}
-		
-		return temp;
-	}
-
 	/**
 	 * @return the arregloPropuesta
 	 */

@@ -87,7 +87,6 @@ public class JDialogPropuesta extends JDialog
 					
 					visualizar();
 					
-					System.out.println(proyecto.darNombre());
 					
 					JOptionPane.showMessageDialog(null, "Se agregado correctamente");
 				}
