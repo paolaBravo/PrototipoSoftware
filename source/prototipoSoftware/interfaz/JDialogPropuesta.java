@@ -131,7 +131,7 @@ public class JDialogPropuesta extends JDialog
 				
 				else if(opciones == JOptionPane.NO_OPTION)
 				{
-					JOptionPane.showMessageDialog(null, "Gracias :v");
+					
 				}
 	
 	
