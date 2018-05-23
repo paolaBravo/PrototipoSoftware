@@ -246,7 +246,7 @@ public class InterfazPrincipal extends JFrame
 			
 			if(cast != null && cast !="" && cast1 != null && cast1 != "")
 			{
-				JTextArea resultado = panelInfo.getTxtResultado();
+				JTextArea resultado = panelTrabajo.getTxtVisualizar();
 				resultado.insert(x, 0);
 			}
 			
