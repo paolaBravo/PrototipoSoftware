@@ -13,23 +13,24 @@ public class PropuestaDeGrado
 	
 	public final static String MODALIDAD4 = "Opcion de empredimiento";
 	
-	private String nombrePropuesta;
+	private String modalidad;
 	
 	private File propuesta;
 	
 	private Estudiante estudiante;
 	
-	public PropuestaDeGrado(String pPropuesta, Estudiante estu)
+	public PropuestaDeGrado(String pPropuesta, Estudiante estu , String pModalidad)
 	{
 		propuesta = new File(pPropuesta);
 		estudiante = estu;
+		modalidad = pModalidad;
 	}
 
 	/**
 	 * @return the nombrePropuesta
 	 */
-	public String getNombrePropuesta() {
-		return nombrePropuesta;
+	public String getModalidad() {
+		return modalidad;
 	}
 
 	/**
@@ -42,8 +43,8 @@ public class PropuestaDeGrado
 	/**
 	 * @param nombrePropuesta the nombrePropuesta to set
 	 */
-	public void setNombrePropuesta(String nombrePropuesta) {
-		this.nombrePropuesta = nombrePropuesta;
+	public void setModalidad(String modalida) {
+		this.modalidad = modalida;
 	}
 
 	/**

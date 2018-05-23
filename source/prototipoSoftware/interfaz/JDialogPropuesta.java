@@ -79,9 +79,11 @@ public class JDialogPropuesta extends JDialog
 				{
 					Estudiante estu = new Estudiante(pNombre, pCodigo, pSemestre, pPrograma);
 					
-					proyecto.registrarPropuesta(new PropuestaDeGrado(ultimoDirectorio, estu), estu);
+					String pModalidad = accionesButtonGroup();
 					
-					accionesButtonGroup();
+					
+					proyecto.registrarPropuesta(new PropuestaDeGrado(ultimoDirectorio, estu, pModalidad), estu);
+
 					
 					visualizar();
 					
@@ -148,9 +150,9 @@ public class JDialogPropuesta extends JDialog
 			
 			String cast = aux.getPropuesta().getName();
 			String cast1 = aux.getEstudiante().getCodigo();
+			String modalidad = aux.getModalidad();
 			
-			
-			String x = cast + "  " + "Codigo:" + cast1 + "\n" ;
+			String x = cast + "  " + "Codigo:" + cast1 + "  "+ "Modalidad:" + modalidad + "\n" ;
 			
 			if(cast != null && cast !="" && cast1 != null && cast1 != "")
 			{
@@ -163,7 +165,7 @@ public class JDialogPropuesta extends JDialog
 	}
 	
 	
-	public void accionesButtonGroup()
+	public String accionesButtonGroup()
 	{
 		
 		JRadioButton radioButto1 = panelInfo.getJrbModalidad1();
@@ -171,55 +173,37 @@ public class JDialogPropuesta extends JDialog
 		JRadioButton radioButto3 = panelInfo.getJrbModalidad3();
 		JRadioButton radioButto4 = panelInfo.getJrbModalidad4();
 		
-		boolean encontro = false;
+		String modalidad = "";
+
 		
 		if(radioButto1.isSelected() == true)
 		{
 			
-			for (int i = 0; i < proyecto.getArregloPropuesta().size() && !encontro;)
-			{
-				PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(proyecto.getArregloPropuesta().size()-1);
-				
-				String monografia = "Monografia";
-				
-				proyecto.getArregloPropuesta().add(monografia);
-				encontro = true;
-			}
+			String nombre = radioButto1.getName();
+			modalidad = nombre;
+			
 		}
 		
 		else if(radioButto2.isSelected() == true)
 		{
-			for (int i = 0; i < proyecto.getArregloPropuesta().size() && !encontro;)
-			{
-				PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(proyecto.getArregloPropuesta().size()-1);
-				
-				proyecto.getArregloPropuesta().add("Asistencia de investigacion");
-				encontro = true;
-			}
+			String nombre = radioButto2.getName();
+			modalidad = nombre;
 		}
 		
 		else if(radioButto3.isSelected() == true)
 		{
-			for (int i = 0; i < proyecto.getArregloPropuesta().size() && !encontro;)
-			{
-				PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(proyecto.getArregloPropuesta().size()-1);
-				
-				proyecto.getArregloPropuesta().add("Trabajo de investigacion");
-				encontro = true;
-			}
+			String nombre = radioButto3.getName();
+			modalidad = nombre;
 		}
 		
 		else if(radioButto4.isSelected() == true)
 		{
-			for (int i = 0; i < proyecto.getArregloPropuesta().size() && !encontro;)
-			{
-				PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(proyecto.getArregloPropuesta().size()-1);
-				
-				proyecto.getArregloPropuesta().add("Opcion de empredimiento");
-				encontro = true;
-				
-			}
+			
+			String nombre = radioButto4.getName();
+			modalidad = nombre;
 		}
+		
+		return modalidad;
 	}
 	
 

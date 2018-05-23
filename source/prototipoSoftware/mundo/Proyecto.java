@@ -43,7 +43,7 @@ public class Proyecto
 				
 				if(elementos[i].isFile() && elementos[i].getName().equalsIgnoreCase(propuesta.getPropuesta().getName()))
 				{
-					propuestasGrado.add(new PropuestaDeGrado(elementos[i].getPath(), estu));
+					propuestasGrado.add(new PropuestaDeGrado(elementos[i].getPath(), estu, propuesta.getModalidad()));
 					
 				}
 			}
