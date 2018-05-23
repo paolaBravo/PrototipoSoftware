@@ -31,7 +31,7 @@ public class PanelPropuesta extends JPanel implements ActionListener
 	
 	public final static String CONSULTAR = "Consultar";
 	
-    private JDialogPropuesta principal;
+    private InterfazPrincipal principal;
     
     private JLabel labNombreEstudiante;
     
@@ -66,12 +66,8 @@ public class PanelPropuesta extends JPanel implements ActionListener
 	private JRadioButton jrbModalidad4;
 	
 	private ButtonGroup grupoModalidad;
-	
-	private PanelPropuesta referencia;
-	
-	private Proyecto proyecto;
-	
-	public PanelPropuesta( JDialogPropuesta ia )
+		
+	public PanelPropuesta( InterfazPrincipal ia )
 	{
 		principal = ia;
 		
@@ -127,7 +123,7 @@ public class PanelPropuesta extends JPanel implements ActionListener
 		panelModalidad.setBorder( borde3 );
 
 		panelModalidad.setLayout(new GridLayout(4, 1));
-		panelModalidad.setPreferredSize( new Dimension(200,90 ) );
+		panelModalidad.setPreferredSize( new Dimension(220,90 ) );
 		
 		jrbModalidad1 = new JRadioButton("Monografia");
 		jrbModalidad2 = new JRadioButton("Asistencia de investigacion");
@@ -154,7 +150,7 @@ public class PanelPropuesta extends JPanel implements ActionListener
 		borde1.setTitleColor( Color.BLACK );
 		panelResultados.setLayout(new BorderLayout());
 		panelResultados.setBorder( borde1 );
-		panelResultados.setPreferredSize( new Dimension(380,90 ) );
+		panelResultados.setPreferredSize( new Dimension(400,90 ) );
 		
 		txtResultado = new JTextArea();
 		txtResultado.setBackground(Color.WHITE);
@@ -173,7 +169,7 @@ public class PanelPropuesta extends JPanel implements ActionListener
 		panelNavegacion.setBorder( borde2 );
 		
 		//Establece las dimensiones del panel
-		panelNavegacion.setPreferredSize( new Dimension( 0,90 ) );
+		panelNavegacion.setPreferredSize( new Dimension( 0,70 ) );
 		
 		butAgregar = new JButton("Agregar");
 		butAgregar.setActionCommand(AGREGAR);

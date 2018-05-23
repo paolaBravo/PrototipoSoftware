@@ -52,6 +52,21 @@ public class Proyecto
 	
 	}
 	
+	
+	public void registrarTrabajoDeGrado(PropuestaDeGrado propuesta, String nombrePropuesta)
+	{
+		for (int i = 0; i < propuestasGrado.size(); i++) 
+		{
+			if(nombrePropuesta.equalsIgnoreCase(propuesta.getPropuesta().getName()))
+			{
+				File f = new File(propuesta.getPropuesta().getAbsolutePath());
+						
+				trabajosGrado.add(f);
+			}
+		}
+	}
+	
+	
 	/**
 	 * @return the arregloPropuesta
 	 */
