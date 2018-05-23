@@ -53,15 +53,21 @@ public class Proyecto
 	}
 	
 	
-	public void registrarTrabajoDeGrado(PropuestaDeGrado propuesta, String nombrePropuesta)
+	public void registrarTrabajoDeGrado(TrabajoDeGrado trabajo, Estudiante estu)
 	{
-		for (int i = 0; i < propuestasGrado.size(); i++) 
+		File f = new File(directorio);
+		File[] elementos = f.listFiles();
+		
+		if(elementos != null)
 		{
-			if(nombrePropuesta.equalsIgnoreCase(propuesta.getPropuesta().getName()))
+			for(int i = 0; i<elementos.length; i++)
 			{
-				File f = new File(propuesta.getPropuesta().getAbsolutePath());
-						
-				trabajosGrado.add(f);
+				
+				if(elementos[i].isFile() && elementos[i].getName().equalsIgnoreCase(trabajo.getTrabajoGrado().getName()))
+				{
+					trabajosGrado.add(new TrabajoDeGrado(elementos[i].getPath(), estu));
+					
+				}
 			}
 		}
 	}

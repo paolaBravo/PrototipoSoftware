@@ -18,6 +18,7 @@ import javax.swing.JTextArea;
 import prototipoSoftware.mundo.Estudiante;
 import prototipoSoftware.mundo.PropuestaDeGrado;
 import prototipoSoftware.mundo.Proyecto;
+import prototipoSoftware.mundo.TrabajoDeGrado;
 
 public class InterfazPrincipal extends JFrame
 {
@@ -45,7 +46,7 @@ public class InterfazPrincipal extends JFrame
 		
         setLayout( new BorderLayout( ) );
         setTitle( "Consulta" );
-        setSize( 650, 500 );
+        setSize( 650, 460 );
         setLocationRelativeTo( null );
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         
@@ -61,8 +62,7 @@ public class InterfazPrincipal extends JFrame
         
         
 	}
-	
-	
+
 	
 	public void registrarPropuesta() 
 	{
@@ -155,6 +155,58 @@ public class InterfazPrincipal extends JFrame
 		
 	}
 	
+	public void registrarTrabajoDeGrado() throws Exception
+	{
+		 JFileChooser fc = new JFileChooser( ultimoDirectorio );
+		 fc.setFileSelectionMode( JFileChooser.FILES_ONLY );
+		 fc.setMultiSelectionEnabled( false );
+		 
+	     int resultado = fc.showOpenDialog( this );
+	
+	     if( resultado == JFileChooser.APPROVE_OPTION )
+	     {
+	         File seleccionado = fc.getSelectedFile( );
+	         ultimoDirectorio = seleccionado.getName();
+	
+			try 
+			{
+				
+				String pNombre = panelTrabajo.getTxtNombrePropuesta().getText();
+			
+				if(pNombre.equals(null) && pNombre.equals(""))
+				{
+					throw new Exception("No pueden haber campos vacios");
+					
+				}
+				
+				else 
+				{	
+					for (int i = 0; i < proyecto.getArregloPropuesta().size(); i++) 
+					{
+						PropuestaDeGrado p = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(i);
+						Estudiante estu = p.getEstudiante();
+					
+						if(estu != null)
+						{
+							proyecto.registrarTrabajoDeGrado( new TrabajoDeGrado(ultimoDirectorio, estu), estu);
+							
+							visualizarTrabajosGrado();
+							
+							JOptionPane.showMessageDialog(null, "Se agregado correctamente");
+						}
+					}
+				}
+			} 	
+			
+			catch(Exception e)
+			{	
+				JOptionPane.showMessageDialog( this, e.getMessage( ), "Error", JOptionPane.ERROR_MESSAGE );
+				}
+		}
+		
+		}
+	
+	
 	public void visualizar() 
 	{
 			
@@ -168,6 +220,29 @@ public class InterfazPrincipal extends JFrame
 			String modalidad = aux.getModalidad();
 			
 			String x = cast + "  " + "Codigo:" + cast1 + "  "+ "Modalidad:" + modalidad + "\n" ;
+			
+			if(cast != null && cast !="" && cast1 != null && cast1 != "")
+			{
+				JTextArea resultado = panelInfo.getTxtResultado();
+				resultado.insert(x, 0);
+			}
+			
+			
+		}
+	}
+	
+	public void visualizarTrabajosGrado() 
+	{
+			
+		
+		for (int i = 0; i < proyecto.getTrabajosGrado().size(); i++)
+		{
+			TrabajoDeGrado aux = (TrabajoDeGrado) proyecto.getTrabajosGrado().get(i);
+			
+			String cast = aux.getTrabajoGrado().getName();
+			String cast1 = aux.getEstudiante().getNombre();
+			
+			String x = cast + "  " + "Codigo:" + cast1 + "  "+ "\n" ;
 			
 			if(cast != null && cast !="" && cast1 != null && cast1 != "")
 			{

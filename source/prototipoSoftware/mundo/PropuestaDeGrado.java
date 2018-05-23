@@ -18,49 +18,28 @@ public class PropuestaDeGrado
 		modalidad = pModalidad;
 	}
 
-	/**
-	 * @return the nombrePropuesta
-	 */
 	public String getModalidad() {
 		return modalidad;
 	}
 
-	/**
-	 * @return the propuesta
-	 */
 	public File getPropuesta() {
 		return propuesta;
 	}
 
-	/**
-	 * @param nombrePropuesta the nombrePropuesta to set
-	 */
-	public void setModalidad(String modalida) {
-		this.modalidad = modalida;
-	}
-
-	/**
-	 * @param propuesta the propuesta to set
-	 */
-	public void setPropuesta(File propuesta) {
-		this.propuesta = propuesta;
-	}
-
-	/**
-	 * @return the estudiante
-	 */
 	public Estudiante getEstudiante() {
 		return estudiante;
 	}
 
-	/**
-	 * @param estudiante the estudiante to set
-	 */
+	public void setModalidad(String modalidad) {
+		this.modalidad = modalidad;
+	}
+
+	public void setPropuesta(File propuesta) {
+		this.propuesta = propuesta;
+	}
+
 	public void setEstudiante(Estudiante estudiante) {
 		this.estudiante = estudiante;
 	}
-
-
-	
 	
 }

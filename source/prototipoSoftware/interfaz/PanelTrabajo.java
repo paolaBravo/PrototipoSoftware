@@ -117,10 +117,43 @@ public class PanelTrabajo extends JPanel implements ActionListener
 			add(panelNavegacion, BorderLayout.EAST);
 		}
 	
+	public JLabel getLabNombrePropuesta() {
+			return labNombrePropuesta;
+		}
+
+		public JTextField getTxtNombrePropuesta() {
+			return txtNombrePropuesta;
+		}
+
+		public JTextArea getTxtVisualizar() {
+			return txtVisualizar;
+		}
+
+		public void setLabNombrePropuesta(JLabel labNombrePropuesta) {
+			this.labNombrePropuesta = labNombrePropuesta;
+		}
+
+		public void setTxtNombrePropuesta(JTextField txtNombrePropuesta) {
+			this.txtNombrePropuesta = txtNombrePropuesta;
+		}
+
+		public void setTxtVisualizar(JTextArea txtVisualizar) {
+			this.txtVisualizar = txtVisualizar;
+		}
+
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
+		if(AGREGAR.equals( e.getActionCommand( ) ))
+		{
+			try {
+				principal.registrarTrabajoDeGrado();
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 	}
 
 }
