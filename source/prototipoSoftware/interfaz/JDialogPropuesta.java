@@ -45,7 +45,7 @@ public class JDialogPropuesta extends JDialog
 
 	
 	
-	public void registrarPropuesta()
+	public void registrarPropuesta() 
 	{
 		 JFileChooser fc = new JFileChooser( ultimoDirectorio );
 		 fc.setFileSelectionMode( JFileChooser.FILES_ONLY );
@@ -68,16 +68,15 @@ public class JDialogPropuesta extends JDialog
 //	
 				String pNombre = panelInfo.getTxtNombre();
 				
-				String pCodigo = panelInfo.getTxtNombre();
+				String pCodigo = panelInfo.getTxtCodigo();
 				
-				String pSemestre = panelInfo.getTxtNombre();
-				int castSemestre = Integer.parseInt(pSemestre);
+				int pSemestre = Integer.parseInt(panelInfo.getTxtSemestre());
 				
-				String pPrograma = panelInfo.getTxtNombre();
-				
+				String pPrograma = panelInfo.getTxtPrograma();
 				
 				
-				Estudiante estu = new Estudiante(pNombre, pCodigo, castSemestre, pPrograma);
+				
+				Estudiante estu = new Estudiante(pNombre, pCodigo, pSemestre, pPrograma);
 				
 				proyecto.registrarPropuesta(new PropuestaDeGrado(ultimoDirectorio, estu), estu);
 					

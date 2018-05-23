@@ -146,6 +146,7 @@ public class PanelPropuesta extends JPanel implements ActionListener
 		if(AGREGAR.equals( e.getActionCommand( ) ))
 		{
 			principal.registrarPropuesta();
+			
 		}
 		
 		else if(CONSULTAR.equals( e.getActionCommand( ) ))
