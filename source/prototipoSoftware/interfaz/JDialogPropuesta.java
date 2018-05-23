@@ -30,7 +30,7 @@ public class JDialogPropuesta extends JDialog
 	
 	public JDialogPropuesta()
 	{
-		proyecto = new Proyecto("D:\\Unibague");
+		proyecto = new Proyecto("I:\\");
 		
 		setTitle( "Propuesta de grado" );
         setSize( 600, 400 );
@@ -179,27 +179,28 @@ public class JDialogPropuesta extends JDialog
 		if(radioButto1.isSelected() == true)
 		{
 			
-			String nombre = radioButto1.getName();
+			
+			String nombre = radioButto1.getText();
 			modalidad = nombre;
 			
 		}
 		
 		else if(radioButto2.isSelected() == true)
 		{
-			String nombre = radioButto2.getName();
+			String nombre = radioButto2.getText();
 			modalidad = nombre;
 		}
 		
 		else if(radioButto3.isSelected() == true)
 		{
-			String nombre = radioButto3.getName();
+			String nombre = radioButto3.getText();
 			modalidad = nombre;
 		}
 		
 		else if(radioButto4.isSelected() == true)
 		{
 			
-			String nombre = radioButto4.getName();
+			String nombre = radioButto4.getText();
 			modalidad = nombre;
 		}
 		
