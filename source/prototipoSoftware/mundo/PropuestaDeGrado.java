@@ -67,6 +67,34 @@ public class PropuestaDeGrado
 		this.estudiante = estudiante;
 	}
 
+	/**
+	 * @return the modalidad1
+	 */
+	public static String getModalidad1() {
+		return "Monografia";
+	}
+
+	/**
+	 * @return the modalidad2
+	 */
+	public static String getModalidad2() {
+		return "Asistencia de investigacion";
+	}
+
+	/**
+	 * @return the modalidad3
+	 */
+	public static String getModalidad3() {
+		return "Trabajo de investigacion";
+	}
+
+	/**
+	 * @return the modalidad4
+	 */
+	public static String getModalidad4() {
+		return "Opcion de empredimiento";
+	}
+
 
 	
 	

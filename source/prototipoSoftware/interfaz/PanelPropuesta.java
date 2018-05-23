@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -18,6 +20,9 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
+
+import prototipoSoftware.mundo.PropuestaDeGrado;
+import prototipoSoftware.mundo.Proyecto;
 
 public class PanelPropuesta extends JPanel implements ActionListener
 {
@@ -62,12 +67,15 @@ public class PanelPropuesta extends JPanel implements ActionListener
 	
 	private ButtonGroup grupoModalidad;
 	
-	private InterfazPrincipal referencia;
+	private PanelPropuesta referencia;
+	
+	private Proyecto proyecto;
 	
 	public PanelPropuesta( JDialogPropuesta ia )
 	{
 		principal = ia;
-	
+		
+		
 		TitledBorder borde = BorderFactory.createTitledBorder("Información de la propuesta de grado");
 		borde.setTitleColor( Color.BLACK );
 		setBorder( borde );
@@ -182,19 +190,14 @@ public class PanelPropuesta extends JPanel implements ActionListener
 		add(panelNavegacion, BorderLayout.SOUTH);
 	}
 
-	public void accionesButtonGroup()
-	{
-		if(jrbModalidad1.isSelected() == true)
-		{
-			
-		}
-	}
 	
 	public void actionPerformed(ActionEvent e) {
 		
 		if(AGREGAR.equals( e.getActionCommand( ) ))
 		{
 			principal.registrarPropuesta();
+			
+			
 			
 		}
 		
@@ -293,6 +296,70 @@ public class PanelPropuesta extends JPanel implements ActionListener
 	 */
 	public void setTxtResultado(JTextArea txtResultado) {
 		this.txtResultado = txtResultado;
+	}
+
+
+	/**
+	 * @return the jrbModalidad1
+	 */
+	public JRadioButton getJrbModalidad1() {
+		return jrbModalidad1;
+	}
+
+
+	/**
+	 * @return the jrbModalidad2
+	 */
+	public JRadioButton getJrbModalidad2() {
+		return jrbModalidad2;
+	}
+
+
+	/**
+	 * @return the jrbModalidad3
+	 */
+	public JRadioButton getJrbModalidad3() {
+		return jrbModalidad3;
+	}
+
+
+	/**
+	 * @return the jrbModalidad4
+	 */
+	public JRadioButton getJrbModalidad4() {
+		return jrbModalidad4;
+	}
+
+
+	/**
+	 * @param jrbModalidad1 the jrbModalidad1 to set
+	 */
+	public void setJrbModalidad1(JRadioButton jrbModalidad1) {
+		this.jrbModalidad1 = jrbModalidad1;
+	}
+
+
+	/**
+	 * @param jrbModalidad2 the jrbModalidad2 to set
+	 */
+	public void setJrbModalidad2(JRadioButton jrbModalidad2) {
+		this.jrbModalidad2 = jrbModalidad2;
+	}
+
+
+	/**
+	 * @param jrbModalidad3 the jrbModalidad3 to set
+	 */
+	public void setJrbModalidad3(JRadioButton jrbModalidad3) {
+		this.jrbModalidad3 = jrbModalidad3;
+	}
+
+
+	/**
+	 * @param jrbModalidad4 the jrbModalidad4 to set
+	 */
+	public void setJrbModalidad4(JRadioButton jrbModalidad4) {
+		this.jrbModalidad4 = jrbModalidad4;
 	}
 
 
