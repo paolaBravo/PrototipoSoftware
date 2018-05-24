@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -38,6 +39,8 @@ public class PanelTrabajo extends JPanel implements ActionListener
 		private JButton butAgregar;
 		
 		private JButton butConsultar;
+		
+		private JComboBox cmAsignar;
 		
 		private JButton butAsignarJurado;
 	
@@ -94,7 +97,7 @@ public class PanelTrabajo extends JPanel implements ActionListener
 			panelNavegacion.setBorder( borde2 );
 			
 			//Establece las dimensiones del panel
-			panelNavegacion.setLayout(new GridLayout(3, 1));
+			panelNavegacion.setLayout(new GridLayout(4, 1));
 			panelNavegacion.setPreferredSize( new Dimension( 300,90 ) );
 			
 			butAgregar = new JButton("Agregar");
@@ -110,9 +113,16 @@ public class PanelTrabajo extends JPanel implements ActionListener
 			butAsignarJurado.setActionCommand(JURADO);
 			butAsignarJurado.addActionListener(this);
 			
+			cmAsignar = new JComboBox();
+			cmAsignar.addItem("Seleccione un Jurado");
+			cmAsignar.setActionCommand(JURADO);
+			cmAsignar.addActionListener(this);
+			
 			panelNavegacion.add(butAgregar);
 			panelNavegacion.add(butConsultar);
+			panelNavegacion.add(cmAsignar);
 			panelNavegacion.add(butAsignarJurado);
+			
 
 			add(panelNavegacion, BorderLayout.EAST);
 		}

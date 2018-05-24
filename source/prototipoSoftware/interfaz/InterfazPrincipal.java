@@ -191,7 +191,7 @@ public class InterfazPrincipal extends JFrame
 						
 							if(estu != null && pCodigo.equalsIgnoreCase(codigo))
 							{
-								proyecto.registrarTrabajoDeGrado( new TrabajoDeGrado(ultimoDirectorio, estu), estu);
+								proyecto.registrarTrabajoDeGrado( new TrabajoDeGrado(ultimoDirectorio, estu, null), estu);
 								
 								visualizarTrabajosGrado();
 								

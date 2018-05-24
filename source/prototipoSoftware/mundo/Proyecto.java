@@ -9,9 +9,9 @@ public class Proyecto
 	/**
 	 * arreglo de propuestas de grado
 	 */
-	private ArrayList propuestasGrado;
-	private ArrayList trabajosGrado;
-	private ArrayList jurados;
+	private ArrayList<PropuestaDeGrado> propuestasGrado;
+	private ArrayList<TrabajoDeGrado> trabajosGrado;
+	private ArrayList<Jurado> jurados;
 	
 	private String directorio;
 	
@@ -65,11 +65,40 @@ public class Proyecto
 				
 				if(elementos[i].isFile() && elementos[i].getName().equalsIgnoreCase(trabajo.getTrabajoGrado().getName()))
 				{
-					trabajosGrado.add(new TrabajoDeGrado(elementos[i].getPath(), estu));
+					trabajosGrado.add(new TrabajoDeGrado(elementos[i].getPath(), estu, null));
 					
 				}
 			}
 		}
+	}
+	
+	
+	public void asignarJurado(String nombre, String codigo)
+	{
+		Estudiante e ;
+		Jurado j = null ;
+		
+		
+		for(Jurado ju :jurados) {
+			
+			if(ju.getNombre().equals(nombre)) {
+				
+				j = ju ; 
+				
+			}
+			
+		}	
+		for (TrabajoDeGrado egh:trabajosGrado)
+		{
+			
+			if(egh.getEstudiante().getCodigo().equals(codigo)) {
+				
+				egh.setJurado(j);
+			}
+			
+		}
+			
+			
 	}
 	
 	

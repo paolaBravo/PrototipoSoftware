@@ -11,11 +11,14 @@ public class TrabajoDeGrado
 	private File trabajoGrado;
 	
 	private Estudiante estudiante;
+	
+	private Jurado jurado ; 
 
-	public TrabajoDeGrado(String pTrabajoGrado, Estudiante estu)
+	public TrabajoDeGrado(String pTrabajoGrado, Estudiante estu, Jurado ju)
 	{
 		trabajoGrado = new File(pTrabajoGrado);
 		estudiante = estu;
+		jurado = null;
 	
 	}
 
@@ -42,5 +45,15 @@ public class TrabajoDeGrado
 	public void setEstudiante(Estudiante estudiante) {
 		this.estudiante = estudiante;
 	}
+
+	public Jurado getJurado() {
+		return jurado;
+	}
+
+	public void setJurado(Jurado jurado) {
+		this.jurado = jurado;
+	}
+	
+	
 	
 }
