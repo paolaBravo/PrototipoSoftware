@@ -204,7 +204,44 @@ public class InterfazPrincipal extends JFrame
 				}
 		}
 		
+	}
+	
+	
+	public void consultarTrabajo()
+	{
+		for (int i = 0; i < proyecto.getTrabajosGrado().size(); i++)
+		{
+			
+			String y = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
+			
+			TrabajoDeGrado aux = (TrabajoDeGrado) proyecto.getTrabajosGrado().get(i);
+		
+			String aux2 = aux.getEstudiante().getCodigo();
+	
+			if(y.equalsIgnoreCase(aux2))
+			{
+				
+				String aux3 = aux.getTrabajoGrado().getName();
+				JOptionPane.showMessageDialog(null, aux3.toString());
+				
+				int opciones = JOptionPane.showConfirmDialog(null, "¿Desea abrir este archivo?");
+				
+				if(opciones == JOptionPane.YES_OPTION)
+				{
+					String url = aux.getTrabajoGrado().getAbsolutePath();
+					
+					abrirarchivo(url);
+				}
+				
+				else if(opciones == JOptionPane.NO_OPTION)
+				{
+					
+				}
+	
+	
+			}
 		}
+	}
 	
 	
 	public void visualizar() 
@@ -240,7 +277,7 @@ public class InterfazPrincipal extends JFrame
 			TrabajoDeGrado aux = (TrabajoDeGrado) proyecto.getTrabajosGrado().get(i);
 			
 			String cast = aux.getTrabajoGrado().getName();
-			String cast1 = aux.getEstudiante().getNombre();
+			String cast1 = aux.getEstudiante().getCodigo();
 			
 			String x = cast + "  " + "Codigo:" + cast1 + "  "+ "\n" ;
 			
