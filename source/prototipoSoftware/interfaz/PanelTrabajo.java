@@ -47,7 +47,7 @@ public class PanelTrabajo extends JPanel implements ActionListener
 		public PanelTrabajo(InterfazPrincipal ia)
 		{
 			principal = ia;
-			
+						
 			TitledBorder borde = BorderFactory.createTitledBorder("Trabajo de grado");
 			borde.setTitleColor( Color.BLACK );
 			setBorder( borde );
@@ -113,8 +113,9 @@ public class PanelTrabajo extends JPanel implements ActionListener
 			butAsignarJurado.setActionCommand(JURADO);
 			butAsignarJurado.addActionListener(this);
 			
-			cmAsignar = new JComboBox();
-			cmAsignar.addItem("Seleccione un Jurado");
+			String jurados[] = {"Asignar Jurado", "ANDRES ARCINIEGAS", "CARLOS LUGO"};
+			
+			cmAsignar = new JComboBox(jurados);
 			cmAsignar.setActionCommand(JURADO);
 			cmAsignar.addActionListener(this);
 			
@@ -150,6 +151,12 @@ public class PanelTrabajo extends JPanel implements ActionListener
 		public void setTxtVisualizar(JTextArea txtVisualizar) {
 			this.txtVisualizar = txtVisualizar;
 		}
+		
+		
+		public String getJurado()
+		{
+			return cmAsignar.getSelectedItem().toString();
+		}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -164,6 +171,15 @@ public class PanelTrabajo extends JPanel implements ActionListener
 				e1.printStackTrace();
 			}
 		}
+		if(CONSULTAR.equals(e.getActionCommand()))
+		{
+			principal.consultarTrabajo();
+		}
+		if(JURADO.equals(e.getActionCommand()))
+		{
+			principal.asignarJurado();
+		}
+		
 	}
 
 }

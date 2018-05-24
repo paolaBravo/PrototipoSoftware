@@ -346,6 +346,15 @@ public class InterfazPrincipal extends JFrame
 		return modalidad;
 	}
 	
+	
+	public void asignarJurado()
+	{
+		
+		String nombre = panelTrabajo.getJurado();
+		String codigo = panelTrabajo.getTxtNombrePropuesta().getText();
+		
+		proyecto.asignarJurado(nombre, codigo);
+	}
 
 	
 	public void abrirarchivo(String archivo){
