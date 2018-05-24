@@ -354,6 +354,9 @@ public class InterfazPrincipal extends JFrame
 		String codigo = panelTrabajo.getTxtNombrePropuesta().getText();
 		
 		proyecto.asignarJurado(nombre, codigo);
+		JOptionPane.showMessageDialog(null, "El jurado ha sido asignado");
+
+		
 	}
 
 	

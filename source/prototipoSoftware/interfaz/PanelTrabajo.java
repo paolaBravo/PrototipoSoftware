@@ -25,6 +25,8 @@ public class PanelTrabajo extends JPanel implements ActionListener
 		public final static String CONSULTAR = "Consultar";
 		
 		public final static String JURADO = "Jurado";
+		
+		public final static String ASIGNAR = "Asignar";
 
 		private InterfazPrincipal principal;	
 		
@@ -110,7 +112,7 @@ public class PanelTrabajo extends JPanel implements ActionListener
 			butConsultar.addActionListener(this);
 
 			butAsignarJurado = new JButton("Asignar Jurado");
-			butAsignarJurado.setActionCommand(JURADO);
+			butAsignarJurado.setActionCommand(ASIGNAR);
 			butAsignarJurado.addActionListener(this);
 			
 			String jurados[] = {"Asignar Jurado", "ANDRES ARCINIEGAS", "CARLOS LUGO"};
@@ -175,7 +177,7 @@ public class PanelTrabajo extends JPanel implements ActionListener
 		{
 			principal.consultarTrabajo();
 		}
-		if(JURADO.equals(e.getActionCommand()))
+		if(ASIGNAR.equals(e.getActionCommand()))
 		{
 			principal.asignarJurado();
 		}
