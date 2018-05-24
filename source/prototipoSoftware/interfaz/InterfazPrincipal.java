@@ -42,7 +42,7 @@ public class InterfazPrincipal extends JFrame
 	public InterfazPrincipal()
 	{
 		
-		proyecto = new Proyecto("I:\\");
+		proyecto = new Proyecto("D:\\Unibague");
 		
         setLayout( new BorderLayout( ) );
         setTitle( "Consulta" );
@@ -170,41 +170,53 @@ public class InterfazPrincipal extends JFrame
 	
 			try 
 			{
-				
-				String pNombre = panelTrabajo.getTxtNombrePropuesta().getText();
+				String pCodigo = panelTrabajo.getTxtNombrePropuesta().getText();
 			
-				if(pNombre.equals(null) && pNombre.equals(""))
+				if(pCodigo.equals(null) && pCodigo.equals(""))
 				{
 					throw new Exception("No pueden haber campos vacios");
 					
 				}
 				
-				else 
-				{	
-					for (int i = 0; i < proyecto.getArregloPropuesta().size(); i++) 
+				else if(pCodigo != null && pCodigo != "")
+				{
+					try 
 					{
-						PropuestaDeGrado p = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(i);
-						Estudiante estu = p.getEstudiante();
 					
-						if(estu != null)
+						for (int i = 0; i < proyecto.getArregloPropuesta().size(); i++) 
 						{
-							proyecto.registrarTrabajoDeGrado( new TrabajoDeGrado(ultimoDirectorio, estu), estu);
-							
-							visualizarTrabajosGrado();
-							
-							JOptionPane.showMessageDialog(null, "Se agregado correctamente");
+							PropuestaDeGrado p = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(i);
+							Estudiante estu = p.getEstudiante();
+							String codigo = estu.getCodigo();
+						
+							if(estu != null && pCodigo.equalsIgnoreCase(codigo))
+							{
+								proyecto.registrarTrabajoDeGrado( new TrabajoDeGrado(ultimoDirectorio, estu), estu);
+								
+								visualizarTrabajosGrado();
+								
+								JOptionPane.showMessageDialog(null, "Se agregado correctamente");
+							}
 						}
 					}
+					
+					catch(Exception e)
+					{	
+						JOptionPane.showMessageDialog( this, e.getMessage( ), "El codigo del estudiante no coicide", JOptionPane.ERROR_MESSAGE );
+						}
 				}
-			} 	
+				
+			}
 			
 			catch(Exception e)
 			{	
-				JOptionPane.showMessageDialog( this, e.getMessage( ), "Error", JOptionPane.ERROR_MESSAGE );
+				JOptionPane.showMessageDialog( this, e.getMessage( ), "La propuesta no pudo ser agregada", JOptionPane.ERROR_MESSAGE );
 				}
-		}
-		
+
+	     }	
+			
 	}
+		
 	
 	
 	public void consultarTrabajo()
@@ -277,9 +289,9 @@ public class InterfazPrincipal extends JFrame
 			TrabajoDeGrado aux = (TrabajoDeGrado) proyecto.getTrabajosGrado().get(i);
 			
 			String cast = aux.getTrabajoGrado().getName();
-			String cast1 = aux.getEstudiante().getCodigo();
+			String cast1 = aux.getEstudiante().getNombre();
 			
-			String x = cast + "  " + "Codigo:" + cast1 + "  "+ "\n" ;
+			String x = cast + "  " + "Nombre del Estudiante:" + cast1 + "  "+ "\n" ;
 			
 			if(cast != null && cast !="" && cast1 != null && cast1 != "")
 			{

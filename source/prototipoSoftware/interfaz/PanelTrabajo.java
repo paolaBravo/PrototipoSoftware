@@ -27,9 +27,9 @@ public class PanelTrabajo extends JPanel implements ActionListener
 
 		private InterfazPrincipal principal;	
 		
-		private JLabel labNombrePropuesta;
+		private JLabel labCodigo;
 		  
-		private JTextField txtNombrePropuesta;
+		private JTextField txtCodigo;
 		
 		private JTextArea txtVisualizar;
 		
@@ -57,13 +57,13 @@ public class PanelTrabajo extends JPanel implements ActionListener
 			panelInfo.setLayout(new GridLayout(2, 2));
 			panelInfo.setPreferredSize( new Dimension( 100,50 ) );
 			
-			labNombrePropuesta = new JLabel("Nombre de la propuesta:");
+			labCodigo = new JLabel("Codigo del estudiante");
 			
-			txtNombrePropuesta = new JTextField();
-			txtNombrePropuesta.setEditable(true);
+			txtCodigo = new JTextField();
+			txtCodigo.setEditable(true);
 			
-			panelInfo.add(labNombrePropuesta);
-			panelInfo.add(txtNombrePropuesta);
+			panelInfo.add(labCodigo);
+			panelInfo.add(txtCodigo);
 			
 			add(panelInfo, BorderLayout.NORTH);
 			
@@ -117,24 +117,24 @@ public class PanelTrabajo extends JPanel implements ActionListener
 			add(panelNavegacion, BorderLayout.EAST);
 		}
 	
-	public JLabel getLabNombrePropuesta() {
-			return labNombrePropuesta;
+	public JLabel getLabCodigo() {
+			return labCodigo;
 		}
 
 		public JTextField getTxtNombrePropuesta() {
-			return txtNombrePropuesta;
+			return txtCodigo;
 		}
 
 		public JTextArea getTxtVisualizar() {
 			return txtVisualizar;
 		}
 
-		public void setLabNombrePropuesta(JLabel labNombrePropuesta) {
-			this.labNombrePropuesta = labNombrePropuesta;
+		public void setLabCodigo(JLabel labCodigo) {
+			this.labCodigo = labCodigo;
 		}
 
-		public void setTxtNombrePropuesta(JTextField txtNombrePropuesta) {
-			this.txtNombrePropuesta = txtNombrePropuesta;
+		public void setTxtCodigo(JTextField txtCodigo) {
+			this.txtCodigo = txtCodigo;
 		}
 
 		public void setTxtVisualizar(JTextArea txtVisualizar) {
